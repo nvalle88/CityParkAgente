@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityParkAgente.Pages.VerificarAutoPage" 
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Login"
+             BackgroundColor="{StaticResource MainColor}">
+ 
+        <StackLayout BindingContext="{Binding VerificarAuto}" Padding="2" Spacing="2">
+        <ActivityIndicator HorizontalOptions="Center" 
+                                   Color="{StaticResource AccentColor2}" 
+                                   IsRunning="{Binding IsRunning}" >
+        </ActivityIndicator>
+        <Entry Placeholder=" Introduce la placa"
+                   Text="{Binding Placa,Mode=TwoWay}"
+                   TextColor="{StaticResource FontColor}">
+        </Entry>
+        <Button 
+                   Command="{Binding VerificarAutoCommand}"
+                   Text="Verificar"
+                   BackgroundColor="{StaticResource AccentColor2}"
+                   TextColor="{StaticResource FontColor}">
+        </Button>
+
+
+    </StackLayout>
+</ContentPage>

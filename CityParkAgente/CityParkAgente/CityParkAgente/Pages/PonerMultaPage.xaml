@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityParkAgente.Pages.PonerMultaPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Multar"
+             BackgroundColor="{StaticResource MainColor}">
+    <ScrollView>
+        <StackLayout BindingContext="{Binding NuevaMulta}" Padding="1" Spacing="2">
+            <Label Text="El vehículo no cuenta con tiempo de parqueo:" TextColor="{StaticResource FontColor}"></Label>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Placa:" TextColor="{StaticResource FontColor}"></Label>
+                <Entry Placeholder="Placa del vehículo"
+                   Text="{Binding Placa,Mode=TwoWay}"
+                   TextColor="{StaticResource FontColor}"
+                   IsEnabled="False">
+                </Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button 
+                Command="{Binding MultarCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Multar"
+                BackgroundColor="{StaticResource AccentColor2}"
+                TextColor="{StaticResource FontColor}">
+                </Button>
+                <Button 
+                Command="{Binding TakePictureCommand}" 
+                Text="Tomar Foto"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="{StaticResource AccentColor2}"
+                TextColor="{StaticResource FontColor}">
+                </Button>
+            </StackLayout>
+            <ActivityIndicator  HorizontalOptions="Center" 
+                            Color="{StaticResource AccentColor2}" 
+                            IsRunning="{Binding IsRunning}" >
+            </ActivityIndicator>
+            <Image
+              WidthRequest="400"
+              HeightRequest="400"
+              Source="{Binding ImageSource}" 
+              VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

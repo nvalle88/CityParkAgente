@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityParkAgente.Pages.MainPage" 
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Agente"
+             BackgroundColor="{StaticResource MainColor}">
+    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackLayout >
+            <Image Grid.Column="1" Grid.Row="1" Source="ic_VerificarAuto.png"
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding VerificarAutoCommand} "></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="1" Grid.Row="2" Source="consulta.png"
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ConsultarMultasCommand} "></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </Grid>
+</ContentPage>
