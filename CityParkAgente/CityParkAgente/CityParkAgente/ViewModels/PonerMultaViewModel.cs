@@ -6,11 +6,14 @@ using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+
+
 
 namespace CityParkAgente.ViewModels
 {
@@ -82,10 +85,18 @@ namespace CityParkAgente.ViewModels
             {
                 Directory = "Photos",
                 Name = "NuevaMulta.jpg",
-                CustomPhotoSize=15,
-                CompressionQuality=30,
+                PhotoSize=PhotoSize.Small,
+                //CustomPhotoSize=100,
+                //CompressionQuality=80,
+                
                 
             });
+
+            
+
+
+
+
 
             if (file != null)
             {
@@ -138,8 +149,10 @@ namespace CityParkAgente.ViewModels
 
              var response=  await apiService.InsertarMulta(multa);
 
+            
+
             if (response.IsSuccess && file!=null)
-            {
+            { 
                 var newMulta = (Multa)response.Result;
                 var response2 = await apiService.SetPhotoAsync(newMulta.MultaId, file.GetStream());
                 var filenName = string.Format("{0}.jpg", newMulta.MultaId);
@@ -161,5 +174,8 @@ namespace CityParkAgente.ViewModels
             navigationService.SetMainPage(navigationService.GetAgenteActual());
             IsRunning = false;
         }
+
+      
+
     }
 }
