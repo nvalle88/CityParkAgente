@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Behaviors\PlacaValidationBehavior.cs" />
     <Compile Include="Classes\AgenteRequest.cs" />
     <Compile Include="Classes\LoginRequest.cs" />
     <Compile Include="Classes\PhotoRequest.cs" />
