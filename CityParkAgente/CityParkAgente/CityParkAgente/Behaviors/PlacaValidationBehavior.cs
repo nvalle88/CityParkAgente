@@ -14,14 +14,13 @@ namespace CityParkAgente.Behaviors
         //•	Se debe dar formato al ingreso de la placa: AAA – 1234
 
         const string placaRegex = @"[a-zA-Z]{3,3}-[0-9]{3,4}";
-            //@"([a-zA-Z]+-)?\d{3,4}";
         protected override void OnAttachedTo(Entry entry)
         {
             entry.TextChanged += TextChanged;
             base.OnAttachedTo(entry);
         }
         bool isactive = true;
-        // Valida si el texto introducido es un correo electrónico
+        // Valida si el texto introducido es una placa
         void TextChanged(object sender, TextChangedEventArgs e)
         {
             if (((Entry)sender).Text.Length > 8)

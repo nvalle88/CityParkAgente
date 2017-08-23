@@ -183,7 +183,6 @@ namespace CityParkAgente.ViewModels
 
             IsRunning = true;
             var vehiculos = await apiService.loadVehiculosMultados(navigationService.GetAgenteActual().AgenteId.ToString());
-
             VehiculosMultados.Clear();
 
             foreach (var vehiculo in vehiculos)

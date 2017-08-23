@@ -22,7 +22,13 @@
             </Entry.Behaviors>
 
         </Entry>
-            
+        <Label Text="No. De plaza" FontSize="Small" />
+        <Entry Placeholder="Ejemplo: 1B"
+                   Text=""
+                   TextColor="{StaticResource FontColor}">
+
+        </Entry>
+
         <Button 
                    Command="{Binding VerificarAutoCommand}"
                    Text="Verificar"
